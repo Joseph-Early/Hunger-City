@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FPS_GunBaseClass : MonoBehaviour
 {
-    [SerializeField] private GameObject bullet, firePoint;
+    [SerializeField] private GameObject bullet, firePoint, grenade;
 
 
     // Start is called before the first frame update
@@ -15,6 +15,9 @@ public class FPS_GunBaseClass : MonoBehaviour
     private void Update()
     {
         if (Input.GetButtonDown("Fire1")) FireGun();
+
+        // Move out of base class
+        if (Input.GetKeyDown(KeyCode.G)) Instantiate(grenade, firePoint.transform.position, firePoint.transform.rotation);
     }
 
     // Fire the gun
