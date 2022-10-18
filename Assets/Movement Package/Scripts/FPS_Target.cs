@@ -13,5 +13,7 @@ public class FPS_Target : MonoBehaviour
         if (health < 1) Destroy(gameObject);
     }
 
+    public void InstantKill() => TakeDamage(health);
+
 
 }
