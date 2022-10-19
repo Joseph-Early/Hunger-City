@@ -21,10 +21,10 @@ public class FPS_Grenade : MonoBehaviour
     }
 
     // Check colliding with target
-    void OnCollisionEnter(Collider obj) {
-        if (obj.CompareTag("target")) {
+    void OnCollisionEnter(Collision obj) {
+        if (obj.gameObject.CompareTag("target")) {
             // Damage the target - instant kill
-            var target = obj.GetComponent<FPS_Target>();
+            var target = obj.gameObject.GetComponent<FPS_Target>();
 
             if (target != null) target.InstantKill();
         }
