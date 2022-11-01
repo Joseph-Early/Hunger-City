@@ -35,7 +35,7 @@ public class FPS_WeaponSwitch : MonoBehaviour
         weapons[currentWeaponIndex].SetActive(true);
 
         // Set name on UI
-        // FPS_GUI.Instance.weaponActive.text = weapons[currentWeaponIndex].name;
+        FPS_GUI.Instance.weaponActive.text = weapons[currentWeaponIndex].name;
     }
 
     // Add weapon
