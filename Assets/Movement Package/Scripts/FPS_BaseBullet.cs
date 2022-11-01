@@ -16,10 +16,12 @@ public class FPS_BaseBullet : MonoBehaviour
     }
 
     // Check collision with target
-    private void OnTriggerEnter(Collider obj) {
-        if (obj.CompareTag("Target")) {
+    private void OnCollisionEnter(Collision obj)
+    {
+        if (obj.gameObject.CompareTag("Target"))
+        {
             Destroy(obj.gameObject);
             Destroy(gameObject);
-        } 
+        }
     }
 }
