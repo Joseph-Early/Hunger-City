@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2317093745819073919}
   - component: {fileID: 3866935120365750214}
   - component: {fileID: 1520522321038018023}
+  - component: {fileID: 4816844726386808798}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -148,3 +149,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 0
   jumpHeight: 0
+  dashSpeedMultiplier: 0
+  jumpCountMax: 2
+--- !u!114 &4816844726386808798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086499835490960984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4ecf27781107b4194261815d8b7317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons: []
