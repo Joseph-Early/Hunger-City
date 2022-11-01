@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// https://github.com/AzFoxxo (2022 MIT)
+
 public class FPS_WeaponSwitch : MonoBehaviour
 {
     // Weapons (new() will not work due to outdated C# version)
@@ -18,7 +20,8 @@ public class FPS_WeaponSwitch : MonoBehaviour
     private void Update()
     {
         // Check for key down
-        if (Input.GetKeyDown(KeyCode.E)) SwitchWeapon();
+        if (Input.GetKeyDown(KeyCode.F)) SwitchWeapon();
+        
     }
 
     // Switch the weapon
@@ -30,6 +33,9 @@ public class FPS_WeaponSwitch : MonoBehaviour
         // Activate the next weapon
         currentWeaponIndex = ((byte)(currentWeaponIndex+1 != weapons.Count ? currentWeaponIndex+1 : 0));
         weapons[currentWeaponIndex].SetActive(true);
+
+        // Set name on UI
+        // FPS_GUI.Instance.weaponActive.text = weapons[currentWeaponIndex].name;
     }
 
     // Add weapon

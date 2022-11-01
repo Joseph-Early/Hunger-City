@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FPS_Grenade : MonoBehaviour
@@ -22,7 +20,7 @@ public class FPS_Grenade : MonoBehaviour
 
     // Check colliding with target
     void OnCollisionEnter(Collision obj) {
-        if (obj.gameObject.CompareTag("target")) {
+        if (obj.gameObject.CompareTag("Target")) {
             // Damage the target - instant kill
             var target = obj.gameObject.GetComponent<FPS_Target>();
 
