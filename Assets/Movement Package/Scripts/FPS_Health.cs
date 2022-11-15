@@ -3,7 +3,7 @@ using UnityEngine;
 public class FPS_Health : MonoBehaviour
 {
     [SerializeField] private float InitialHealth;
-    [HideInInspector] public float health ;
+    [HideInInspector] public float health;
 
     // Set the health on awake
     private void Awake() {

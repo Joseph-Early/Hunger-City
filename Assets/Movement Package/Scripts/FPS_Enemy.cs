@@ -6,7 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(FPS_Health))]
 public class FPS_Enemy : MonoBehaviour
 {
-    private NavMeshAgent navMeshAgent;
+    internal NavMeshAgent navMeshAgent;
 
     [SerializeField] private float damageAmount;
     [SerializeField] private float attackDelay;
@@ -23,7 +23,7 @@ public class FPS_Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (Time.time > attackDelay)
         {
