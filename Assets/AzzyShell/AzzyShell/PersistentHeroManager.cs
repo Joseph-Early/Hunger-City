@@ -22,7 +22,7 @@ public class PersistentHeroManager : Hero
     #endregion
 
     #region App persistent hero manager start (OnStart) - Create heroes present at start here
-    public override void OnStart()
+        public override void OnStart()
     {
         // Create heroes here
         Create<AzzyShell>();
