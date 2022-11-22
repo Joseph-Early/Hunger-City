@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Target
   - Kill Plane
+  - HealthPack
+  - Weapon
   layers:
   - Default
   - TransparentFX

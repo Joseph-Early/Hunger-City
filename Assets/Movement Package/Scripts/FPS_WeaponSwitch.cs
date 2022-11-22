@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ public class FPS_WeaponSwitch : MonoBehaviour
 {
     // List of weapons
     [SerializeField] List<GameObject> weapons = new List<GameObject>();
+    [SerializeField] GameObject weaponStoreLocation;
 
     // Current weapon index
     byte currentWeaponIndex;
@@ -68,16 +70,45 @@ public class FPS_WeaponSwitch : MonoBehaviour
     }
 
     #region Helper utilities
-    // Add weapon
+    ///<summary> Add a new weapon to the weapon list </summary>
+    ///<param name="weapon"> Weapon to add </param>
     public void AddWeapon(GameObject weapon) => weapons.Add(weapon); 
 
-    // Remove weapon
+    ///<summary> Remove a weapon from weapon list </summary>
+    ///<param name="weapon"> Weapon to remove </param>
     public void RemoveWeapon(GameObject weapon) => weapons.Remove(weapon);
 
-    // Get the current weapon
+    ///<summary> Return the current weapon </summary>
+    ///<returns> Returns weapon </returns>
     public GameObject GetCurrentWeapon() => weapons[currentWeaponIndex];
 
-    // Get the current weapon index
+    ///<summary> Return the current weapon's index </summary>
+    ///<returns> Returns weapon index (byte) </returns>
     public byte GetCurrentWeaponIndex() => currentWeaponIndex;
+
+    ///<summary> Nest the weapon under the player prefab </summary>
+    ///<param name="weapon"> Weapon to nest </param>
+    public void Nest(GameObject weapon, bool nest = true) {
+        if (IsNested(weapon))
+        {
+            // Move the weapon under the player prefab
+            weapon.transform.SetParent(weaponStoreLocation.transform);
+
+            // Set the position to 0, 0, 0
+            weapon.transform.position = new Vector3(0f, 0f, 0f);
+        }
+        else
+        {
+            // Drop the weapon
+            weapon.transform.SetParent(null);
+        }
+    }
+
+    ///<summary> Check the weapon is nested </summary>
+    ///<param name="weapon"> Weapon to check is nested </param>
+    ///<returns> Bool if nested </returns>
+    public bool IsNested(GameObject weapon) => weapon.transform.parent != null ? true : false;
+    
+
     #endregion
 }
