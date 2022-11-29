@@ -3,7 +3,7 @@ using TMPro;
 
 public class FPS_GUI : MonoBehaviour
 {
-    [SerializeField] public TMP_Text weaponActive;
+    [SerializeField] public TMP_Text weaponActive, currentHealth;
 
     public static FPS_GUI Instance;
 

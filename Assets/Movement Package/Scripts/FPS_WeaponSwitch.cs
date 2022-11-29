@@ -67,6 +67,9 @@ public class FPS_WeaponSwitch : MonoBehaviour
 
         // Activate the new weapon
         weapons[currentWeaponIndex].SetActive(true);
+
+        // Set the the UI text to new weapon
+        FPS_GUI.Instance.weaponActive.text = weapons[currentWeaponIndex].name;
     }
 
     #region Helper utilities

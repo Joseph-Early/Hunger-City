@@ -8,6 +8,7 @@ TagManager:
   - Kill Plane
   - HealthPack
   - Weapon
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
