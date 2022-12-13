@@ -3,12 +3,14 @@ using UnityEngine;
 public class FPS_Spawn : MonoBehaviour
 {
     [SerializeField] private GameObject enemy;
-    [SerializeField] private float enemyCount, enemyMax;
+    [SerializeField] private ulong enemyMax;
+    [SerializeField] private ulong increaseMaxPerWave;
+    private ulong enemyCount = 0;
     private GameObject[] spawnLocations;
+
 
     // Find all spawn points present in the world
     private void Awake() => spawnLocations = GameObject.FindGameObjectsWithTag("SpawnPoint");
-    
 
     // Spawn
     void Update() => Spawn();
@@ -16,6 +18,15 @@ public class FPS_Spawn : MonoBehaviour
     // Spawn method
     private void Spawn()
     {
+        // Calculate the number of enemies
+        enemyCount = (ulong)GameObject.FindGameObjectsWithTag("EnemyUwU").Length;
+
+        // If the wave if not over, return
+        if (enemyCount != 0) return;
+
+        // Increase max enemies every wave
+        enemyMax += increaseMaxPerWave;
+
         while (enemyCount < enemyMax) {
             // Randomly choose a spawn location
             int loc = Random.Range(0, spawnLocations.Length);

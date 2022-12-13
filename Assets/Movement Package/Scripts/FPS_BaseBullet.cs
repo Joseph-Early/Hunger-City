@@ -5,6 +5,7 @@ public class FPS_BaseBullet : MonoBehaviour
     private Rigidbody rb;
 
     [SerializeField] private float bulletSpeed;
+    [SerializeField] private int damageAmount;
 
     // Start is called before the first frame update
     private void Start()
@@ -14,12 +15,20 @@ public class FPS_BaseBullet : MonoBehaviour
     }
 
     // Check collision with target
-    private void OnCollisionEnter(Collision obj)
+    private void OnTriggerEnter(Collider obj)
     {
-        if (obj.gameObject.CompareTag("Target"))
+        // Insta kill target
+        if (obj.CompareTag("Target"))
         {
             Destroy(obj.gameObject);
             Destroy(gameObject);
+        }
+
+        // Damage object with FPS_Health component
+        var health = obj.GetComponent<FPS_Health>();
+        if (health != null) {
+            health.health -= damageAmount;
+            print(health.health);
         }
     }
 }
