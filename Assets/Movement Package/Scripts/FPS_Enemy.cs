@@ -31,6 +31,7 @@ public class FPS_Enemy : MonoBehaviour
             if (Vector3.Distance(target.position, transform.position) <= attackDelay)
             {
                 target.GetComponent<PlayerHealth>().health -= damageAmount;
+                print(target.GetComponent<PlayerHealth>().health);
                 attackDelay = Time.time + attackRate;
             }
         }

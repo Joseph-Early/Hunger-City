@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorSwing : MonoBehaviour
 {
-    private float doorOpenSpeed = 2f;
+    // private float doorOpenSpeed = 2f;
 
     public bool isOpening = true;
 

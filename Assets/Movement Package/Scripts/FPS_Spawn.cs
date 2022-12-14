@@ -19,7 +19,7 @@ public class FPS_Spawn : MonoBehaviour
     private void Spawn()
     {
         // Calculate the number of enemies
-        enemyCount = (ulong)GameObject.FindGameObjectsWithTag("Enemy").Length;
+        enemyCount = (ulong)GameObject.FindGameObjectsWithTag("EnemyUwU").Length;
 
         // If the wave if not over, return
         if (enemyCount != 0) return;

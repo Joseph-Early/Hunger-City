@@ -24,6 +24,9 @@ namespace Actor.Player
 
         void Update()
         {
+            if (FPS_Pause.paused) return; // Do nothing if paused
+
+
             // Jump must be in the update method not fixed update due to key presses not always registering and failing to jump
             Jump();
 
@@ -31,6 +34,8 @@ namespace Actor.Player
         }
         void FixedUpdate()
         {
+            if (FPS_Pause.paused) return; // Do nothing if paused
+            
             // Used fixed update so that frame timings are consistent and speeds are not variable
             Walking();
         }

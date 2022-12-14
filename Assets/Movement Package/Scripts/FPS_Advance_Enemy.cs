@@ -16,7 +16,7 @@ public class FPS_Advance_Enemy : FPS_Enemy
         // Invoke the enemies update
         base.Update();
         
-        // Fire the gun every 1.5 secs
+        // // Fire the gun every 1.5 secs
         if (navMeshAgent.isActiveAndEnabled)
         {
             if (time - Time.time <= 0) {

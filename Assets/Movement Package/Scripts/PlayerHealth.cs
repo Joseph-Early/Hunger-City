@@ -10,7 +10,7 @@ public class PlayerHealth : FPS_Health
     // Kill the player when theyt fall below the scene
     void Update()
     {
-        if (transform.position.y < -3) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (transform.position.y < -3 || health <= 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     // Update health
