@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Actor
@@ -9,9 +7,8 @@ namespace Actor
     public class Hunger : MonoBehaviour
     {
         private FPS_Health health;
-        private float hunger;
+        [HideInInspector] public float hunger;
         [SerializeField] private float hungerRate, hungerDamage;
-
 
         // Get a reference to the FPS_Health component
         private void Awake() => health = gameObject.GetComponent<FPS_Health>();
@@ -28,7 +25,8 @@ namespace Actor
             health.health -= hunger >= 100 ? Time.deltaTime * hungerDamage : 0;
 
             #if DEBUG
-            print($"Hunger {hunger}");
+            // Debug log
+            print($"Hunger level {hunger}/100");
             #endif
         }
     }

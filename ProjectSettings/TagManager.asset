@@ -10,6 +10,7 @@ TagManager:
   - Weapon
   - SpawnPoint
   - EnemyUwU
+  - Food
   layers:
   - Default
   - TransparentFX

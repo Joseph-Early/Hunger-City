@@ -5,6 +5,11 @@ public class PicksUps : MonoBehaviour
     // Pickup player health pack
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Food")) {
+            Destroy(other.gameObject);
+            GetComponent<Actor.Hunger>().hunger = 0;
+        }
+
         // Exit if not health pack
         if (!other.CompareTag("HealthPack")) return;
 
