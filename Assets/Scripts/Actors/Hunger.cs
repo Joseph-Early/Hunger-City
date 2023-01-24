@@ -1,3 +1,5 @@
+#define GUI
+
 using UnityEngine;
 
 namespace Actor
@@ -27,6 +29,10 @@ namespace Actor
             #if DEBUG
             // Debug log
             print($"Hunger level {hunger}/100");
+            #endif
+
+            #if GUI
+                FPS_GUI.Instance.textToDisplay += $"Hunger level {Mathf.Round(hunger)}%\n";
             #endif
         }
     }

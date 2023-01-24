@@ -1,3 +1,5 @@
+#define GUI
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +18,8 @@ public class PlayerHealth : FPS_Health
     // Update health
     void LateUpdate()
     {
-        FPS_GUI.Instance.currentHealth.text = $"Health {health}";
+        #if GUI
+            FPS_GUI.Instance.textToDisplay += $"Health {Mathf.Round(health)}/100\n";
+        #endif
     }
 }
