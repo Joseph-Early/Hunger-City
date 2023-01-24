@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorSwing : MonoBehaviour
@@ -7,12 +5,6 @@ public class DoorSwing : MonoBehaviour
     // private float doorOpenSpeed = 2f;
 
     public bool isOpening = true;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
