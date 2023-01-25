@@ -12,7 +12,7 @@ TagManager:
   - Food
   - RoadPath
   - Enemy
-  - EnemyUwU
+  - FoodSpawn
   layers:
   - Default
   - TransparentFX
