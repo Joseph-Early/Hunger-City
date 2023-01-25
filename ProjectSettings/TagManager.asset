@@ -9,8 +9,10 @@ TagManager:
   - HealthPack
   - Weapon
   - SpawnPoint
-  - EnemyUwU
   - Food
+  - RoadPath
+  - Enemy
+  - EnemyUwU
   layers:
   - Default
   - TransparentFX

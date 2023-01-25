@@ -13,6 +13,8 @@ public class FPS_Health : MonoBehaviour
     // If the actor is at zero health, kill them
     void Update()
     {
+        health = Mathf.Clamp(health, 0, 100);
+
         if (health < 1)
             Kill();
     }

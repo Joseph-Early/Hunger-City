@@ -5,12 +5,18 @@ public class FPS_Spawn : MonoBehaviour
     [SerializeField] private GameObject enemy;
     [SerializeField] private ulong enemyMax;
     [SerializeField] private ulong increaseMaxPerWave;
-    private ulong enemyCount = 0;
+
+    [SerializeField] private bool isWave;
+
+    [SerializeField] [WSWhitehouse.TagSelector.TagSelectorAttribute] string spawnedObjectTag = "Untagged";
+    [SerializeField] [WSWhitehouse.TagSelector.TagSelectorAttribute] string SpawnPointTag = "Untagged";
+    private ulong spawnCount = 0;
+    private bool spawnedOnce = false;
     private GameObject[] spawnLocations;
 
 
     // Find all spawn points present in the world
-    private void Awake() => spawnLocations = GameObject.FindGameObjectsWithTag("SpawnPoint");
+    private void Awake() => spawnLocations = GameObject.FindGameObjectsWithTag(SpawnPointTag);
 
     // Spawn
     void Update() => Spawn();
@@ -18,16 +24,17 @@ public class FPS_Spawn : MonoBehaviour
     // Spawn method
     private void Spawn()
     {
+        
         // Calculate the number of enemies
-        enemyCount = (ulong)GameObject.FindGameObjectsWithTag("EnemyUwU").Length;
+        spawnCount = (ulong)GameObject.FindGameObjectsWithTag(spawnedObjectTag).Length;
 
         // If the wave if not over, return
-        if (enemyCount != 0) return;
+        if (spawnCount != 0) return;
 
         // Increase max enemies every wave
         enemyMax += increaseMaxPerWave;
 
-        while (enemyCount < enemyMax) {
+        while (spawnCount < enemyMax && (!spawnedOnce)) {
             // Randomly choose a spawn location
             int loc = Random.Range(0, spawnLocations.Length);
 
@@ -35,10 +42,13 @@ public class FPS_Spawn : MonoBehaviour
             Instantiate(enemy, spawnLocations[loc].transform.position, spawnLocations[loc].transform.rotation);
 
             // Increase count
-            enemyCount++;
-            
+            spawnCount++;
+
             print($"Created {spawnLocations[loc].transform.position} at {spawnLocations[loc].transform.rotation}!");
             print(spawnLocations.Length);
         }
+
+        // Set spawned once to true
+        if (!isWave) spawnedOnce = true;
     }
 }
