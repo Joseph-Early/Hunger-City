@@ -10124,7 +10124,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7412184387483065537}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0570372100dd93948961573518284b7d, type: 3}
   m_Name: 
@@ -10221,6 +10221,7 @@ GameObject:
   - component: {fileID: 7412184387483065538}
   - component: {fileID: 7412184387483065539}
   - component: {fileID: 4990384413949463588}
+  - component: {fileID: 7412184387483065542}
   m_Layer: 5
   m_Name: DialogueSystem
   m_TagString: Untagged
@@ -10309,3 +10310,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &7412184387483065542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7412184387483065537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47542a2e497156e41bd90823db36026c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 993358984}
+  dialogueSystemToHide: {fileID: 7412184386667282695}
+  timeDelayForEachCharacter: 0

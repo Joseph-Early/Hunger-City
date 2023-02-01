@@ -1,12 +1,6 @@
-/*
- *   Copyright (c) 2023 Az Foxxo
- *   All rights reserved.
- */
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
-
 namespace UI.Dialogue
 {
     public class Dialogue : MonoBehaviour
@@ -62,7 +56,7 @@ namespace UI.Dialogue
             }
 
             // Show the next character
-            if (timeLast + timeDelayForEachCharacter >= Time.time)
+            if (Time.time >= timeLast + timeDelayForEachCharacter)
             {
                 if (currentPosition != dialogueList[(int)currentMessage].Length)
                 {

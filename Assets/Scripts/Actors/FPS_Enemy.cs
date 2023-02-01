@@ -14,6 +14,7 @@ public class FPS_Enemy : MonoBehaviour
     [SerializeField] private float attackDistance;
 
     [HideInInspector] public Transform target;
+    [HideInInspector] public bool activated = true;
 
     // Reference to the player
     private void Awake()
@@ -28,7 +29,7 @@ public class FPS_Enemy : MonoBehaviour
         if (Time.time > attackDelay)
         {
             navMeshAgent.destination = target.position;
-            if (Vector3.Distance(target.position, transform.position) <= attackDelay)
+            if (Vector3.Distance(target.position, transform.position) <= attackDelay && activated)
             {
                 target.GetComponent<PlayerHealth>().health -= damageAmount;
                 print(target.GetComponent<PlayerHealth>().health);
