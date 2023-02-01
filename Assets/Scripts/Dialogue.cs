@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2023 Az Foxxo
+ *   All rights reserved.
+ */
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -18,7 +22,7 @@ namespace UI.Dialogue
         [Header("Dialogue variables")]
         [SerializeField] private TMP_Text textComponent; // TMP text (component)
         [SerializeField] private GameObject dialogueSystemObject; // Used to enable/disable based on if the dialogue is active or not
-        [SerializeField] [Range(.01f, 2f)] private float timeDelayForEachCharacter; // Time between each character
+        [SerializeField][Range(.01f, 2f)] private float timeDelayForEachCharacter; // Time between each character
 
         // Store a reference to the text component on the TMP
         private void Awake()
@@ -29,15 +33,15 @@ namespace UI.Dialogue
             // Set text to an empty string
             textComponent.text = "";
 
+            // TODO: Remove this (testing only)
             // Add some example dialogue to the test the system
-            // TODO: Remove this
             AddDialogue("This is an example message.");
             AddDialogue("The dialogue system should now hide itself...");
             AddDialogue("now");
             SetDialogueActive();
         }
 
-        // Set thew last time to the current time
+        // Set the last time to the current time
         private void Start() => timeLast = Time.time;
 
         private void Update()
@@ -112,9 +116,8 @@ namespace UI.Dialogue
             }
         }
 
-
         /// <summary> Add a piece of dialogue to the dialogue system </summary>
-        public void AddDialogue(string newDialogue = "...") => dialogueList.Add(newDialogue);
+        public void AddDialogue(string newDialogue = "No message set!") => dialogueList.Add(newDialogue);
 
 
         /// <summary> Activate/deactivate the dialogue system </summary>
