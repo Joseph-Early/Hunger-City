@@ -14,6 +14,7 @@ This game is a first-person game where the player must gather food to survive in
 
 ## Game systems
 - Dialogue system
+- Pause menu
 - UI
     - UI for displaying the hunger and health of the player
 - Player locomotion
