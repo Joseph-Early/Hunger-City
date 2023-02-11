@@ -34,6 +34,6 @@ This game is a first-person game where the player must gather food to survive in
 - World spawn manager (for enemies paired with a food item to protect)
 - Hunger system
 - Health system
-- Pickables
+- Pickup-able system
     - Reset Hunger to zero
     - Heal health
