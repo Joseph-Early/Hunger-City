@@ -34,6 +34,10 @@ public class DialogueSystem : MonoBehaviour
         if (startEnabled) SetDialogueActive();
     }
 
+    /// <summary>
+    /// Set the dialogue system to active or not
+    /// </summary>
+    /// <param name="MakeActive">Whether to make the dialogue system active or not</param>
     public void SetDialogueActive(bool MakeActive = true) {
         if (messages.Length != 0) DialogueIsActive = MakeActive;
 
@@ -47,6 +51,10 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Add a message to the dialogue system
+    /// </summary>
+    /// <param name="message">Message to add</param>
     public void AddDialogue(string message)
     {
         if (messages == null)
