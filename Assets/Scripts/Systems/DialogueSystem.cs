@@ -14,6 +14,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField][Range(.01f, .1f)] private float timeDelayForEachCharacter; // Time between each character
     [SerializeField] private bool startEnabled; // Whether to start enabled or not
     [SerializeField] private string[] messages; // Dialogue text
+    [SerializeField] private GameObject[] ObjectsToHide; // Objects to hide when dialogue is active
 
     // Start is called before the first frame update
     void Awake()
@@ -35,6 +36,15 @@ public class DialogueSystem : MonoBehaviour
 
     public void SetDialogueActive(bool MakeActive = true) {
         if (messages.Length != 0) DialogueIsActive = MakeActive;
+
+        // Set objects to hide, if dialogue is active, else set them to active
+        if (ObjectsToHide != null)
+        {
+            foreach (var obj in ObjectsToHide)
+            {
+                obj.gameObject.SetActive(!MakeActive);
+            }
+        }
     }
 
     public void AddDialogue(string message)

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Hunger = HungerCity.Actor.Components.Hunger;
 
 public class PicksUps : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class PicksUps : MonoBehaviour
     {
         if (other.CompareTag("Food")) {
             Destroy(other.gameObject);
-            GetComponent<Actor.Hunger>().hunger = 0;
+            GetComponent<Hunger>().hunger = 0;
         }
 
         // Exit if not health pack

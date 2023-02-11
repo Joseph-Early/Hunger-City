@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using FPS_Health = HungerCity.Actor.Components.FPS_Health;
 
 public class PlayerHealth : FPS_Health
 {

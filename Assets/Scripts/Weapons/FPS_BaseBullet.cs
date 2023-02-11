@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using FPS_Health = HungerCity.Actor.Components.FPS_Health;
 public class FPS_BaseBullet : MonoBehaviour
 {
     private Rigidbody rb;

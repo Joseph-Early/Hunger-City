@@ -1,9 +1,10 @@
 using UnityEngine;
 using TMPro;
+using Hunger = HungerCity.Actor.Components.Hunger;
 
 namespace HungerCity.UI
 {
-    [RequireComponent(typeof(PlayerHealth), typeof(Actor.Hunger))]
+    [RequireComponent(typeof(PlayerHealth), typeof(Hunger))]
     public class PlayerStatsDriver : MonoBehaviour
     {
         // Get a reference to the TMP_Text component.
@@ -11,16 +12,15 @@ namespace HungerCity.UI
 
         // Reference to the PlayerHealth and Hunger component
         private PlayerHealth health;
-        private Actor.Hunger hunger;
+        private Hunger hunger;
 
         // Get the PlayerHealth and Hunger component on awake
         private void Awake()
         {
             // Get the PlayerHealth and Hunger component
             health = GetComponent<PlayerHealth>();
-            hunger = GetComponent<Actor.Hunger>();
+            hunger = GetComponent<Hunger>();
         }
-
 
         // In late-update, update the UI with the current health and hunger
         private void LateUpdate()

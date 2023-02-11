@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Actor
+namespace HungerCity.Actor
 {
     public class Guard : FPS_Enemy
     {

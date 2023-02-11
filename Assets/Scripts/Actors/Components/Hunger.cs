@@ -1,6 +1,7 @@
 using UnityEngine;
+using FPS_Health = HungerCity.Actor.Components.FPS_Health;
 
-namespace Actor
+namespace HungerCity.Actor.Components
 {
     // Require any object implementing hunger have FPS_Health
     [RequireComponent(typeof(FPS_Health))]

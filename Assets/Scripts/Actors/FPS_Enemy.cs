@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using FPS_Health = HungerCity.Actor.Components.FPS_Health;
 
 [RequireComponent(typeof(FPS_Health))]
 public class FPS_Enemy : MonoBehaviour
