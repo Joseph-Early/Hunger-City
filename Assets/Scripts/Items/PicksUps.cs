@@ -1,5 +1,6 @@
 using UnityEngine;
 using Hunger = HungerCity.Actor.Components.Hunger;
+using Globals = HungerCity.Systems.Globals;
 
 public class PicksUps : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class PicksUps : MonoBehaviour
         if (other.CompareTag("Food")) {
             Destroy(other.gameObject);
             GetComponent<Hunger>().hunger = 0;
+
+            // Spawn an enemy above and to the right of the player and make it chase the player
+            var enemy = Instantiate(Globals.Instance.EnemyPrefab, transform.position + new Vector3(1, 1, 0), Quaternion.identity);
         }
 
         // Exit if not health pack
