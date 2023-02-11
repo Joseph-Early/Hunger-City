@@ -1,5 +1,3 @@
-#define GUI
-
 using UnityEngine;
 
 namespace Actor
@@ -25,15 +23,6 @@ namespace Actor
 
             // If hunger is greater than 100, take damage at rate of hungerDamage
             health.health -= hunger >= 100 ? Time.deltaTime * hungerDamage : 0;
-
-            // #if DEBUG
-            // // Debug log
-            // print($"Hunger level {hunger}/100");
-            // #endif
-
-            #if GUI
-                FPS_GUI.Instance.textToDisplay += $"Hunger level {Mathf.Round(hunger)}%\n";
-            #endif
         }
     }
 }
